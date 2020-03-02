@@ -1,3 +1,9 @@
+
+all: data_cleaned results paper clean 
+paper: gen/paper/output/paper.pdf
+data_cleaned: gen/data-preparation/output/data_cleaned.RData
+results: gen/analysis/output/model_results.RData
+
 # Generate paper/text
 gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 							src/paper/paper.tex
@@ -25,8 +31,5 @@ gen/paper/output/table1.tex: gen/analysis/output/model_results.RData \
 							 src/paper/tables.R
 	R CMD BATCH src/paper/tables.R
 
-
 clean: 
-	rm gen/paper/output/paper \
-		gen/paper/output/paper.aux \
-		gen/paper/output/paper.log
+	del gen\paper\output\paper.log gen\paper\output\paper.aux .RData
