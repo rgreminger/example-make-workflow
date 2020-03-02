@@ -12,7 +12,8 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 - R packages: 
 	install.packages("stargazer")
 - Gnu make 
-- For Gnu make to work, both R and Gnu make need to be made available in the system path 
+- TeX distribution (I used TeX Live 2019) 
+- For the `makefile` to work, R, Gnu make and the TeX distribution need to be made available in the system path 
 - Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
 
 
