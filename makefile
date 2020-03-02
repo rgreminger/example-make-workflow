@@ -35,5 +35,6 @@ gen/data-preparation/temp/data_merged.RData: data/dataset1/dataset1.csv \
 	R CMD BATCH src/data-preparation/merge_data.R
 	
 clean: 
-	del gen\paper\output\paper.log gen\paper\output\paper.aux .RData
+	del /S *.log *.aux 
+	del .RData
 
