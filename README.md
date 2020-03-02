@@ -2,7 +2,10 @@
 
 This is a basic test/example repository using Gnu make for a reproducible research workflow, as described here: (tilburgsciencehub.com)[http://tilburgsciencehub.com/]. 
 
-The main aim is to have a basic `makefile`, which can be easily extended to use in an actual projects. 
+The main aim of this to have a basic structure, which can be easily adjusted to use in an actual projects.  In this example project, the following is done: 
+	1. Load and prepare data
+	2. Run some analysis
+	3. Present results in a final pdf using LaTeX.  
 
 ## Dependencies
 - R 
@@ -17,4 +20,4 @@ The main aim is to have a basic `makefile`, which can be easily extended to use 
 - Tested under Windows 10, using `cmd.exe` terminal 
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
 - On unix system, probably need to adjust `del` command to `rm`
-- Several improvements remain (e.g. store .Rout files in audit folders etc.) 
+- Many improvements remain (e.g. store .Rout files in audit folders, modify table etc.) 
