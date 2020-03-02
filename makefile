@@ -1,3 +1,6 @@
+# Notes: 
+# - If run on unix system, use rm instead of del command in clean  
+# - Careful with spaces! If use \ to split to multiple lines, cannot have a space after \ 
 
 all: data_cleaned results paper clean 
 paper: gen/paper/output/paper.pdf
@@ -33,3 +36,4 @@ gen/data-preparation/temp/data_merged.RData: data/dataset1/dataset1.csv \
 	
 clean: 
 	del gen\paper\output\paper.log gen\paper\output\paper.aux .RData
+
