@@ -15,8 +15,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-[Previously saved workspace restored]
-
 > # Load results
 > load("./gen/analysis/output/model_results.RData")
 > 
@@ -32,11 +30,11 @@ Please cite as:
 Warning message:
 package 'stargazer' was built under R version 3.5.2 
 > 
-> # Export to latex table 
-> stargazer(m1,m2,out="./gen/paper/output/table1.tex")
+> # Export to latex table (omits f-stat since messes up table)
+> stargazer(m1,m2,out="./gen/paper/output/table1.tex",omit.stat=c("f")) 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mo., Mär 02, 2020 - 08:01:16
+% Date and time: Mo., Mär 02, 2020 - 08:10:59
 \begin{table}[!htbp] \centering 
   \caption{} 
   \label{} 
@@ -65,7 +63,6 @@ Observations & 989 & 989 \\
 R$^{2}$ & 0.971 & 1.000 \\ 
 Adjusted R$^{2}$ & 0.971 & 1.000 \\ 
 Residual Std. Error & 0.058 (df = 986) & 0.000 (df = 985) \\ 
-F Statistic & 16,637.120$^{***}$ (df = 2; 986) & 72,062,031,301,068,702,944,080,648,044,440.000$^{***}$ (df = 3; 985) \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
@@ -74,4 +71,4 @@ F Statistic & 16,637.120$^{***}$ (df = 2; 986) & 72,062,031,301,068,702,944,080,
 > 
 > proc.time()
    user  system elapsed 
-   0.48    0.07    0.73 
+   0.43    0.07    0.51 
