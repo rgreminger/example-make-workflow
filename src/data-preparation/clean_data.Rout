@@ -1,0 +1,34 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # Load merged data 
+> load("./gen/data-preparation/temp/data_merged.RData")
+> 
+> # Drop observations with V1 <= -0.9
+> df_cleaned <- df_merged[df_merged$V1 > -0.9,]
+> 
+> # Remove V1
+> df_cleaned <- df_cleaned[,c(1,2,4:7)]
+> 
+> # Save cleaned data
+> save(df_cleaned,file="./gen/data-preparation/output/data_cleaned.RData")
+> 
+> proc.time()
+   user  system elapsed 
+   0.15    0.09    0.25 

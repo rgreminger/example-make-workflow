@@ -1,0 +1,77 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # Load results
+> load("./gen/analysis/output/model_results.RData")
+> 
+> # Load in additional package to export to latex table
+> require(stargazer) 
+Loading required package: stargazer
+
+Please cite as: 
+
+ Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+Warning message:
+package 'stargazer' was built under R version 3.5.2 
+> 
+> # Export to latex table 
+> stargazer(m1,m2,out="./gen/paper/output/table1.tex")
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Mo., Mär 02, 2020 - 08:01:16
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & \multicolumn{2}{c}{V1} \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ V3 & 0.499$^{***}$ & 0.500$^{***}$ \\ 
+  & (0.003) & (0.000) \\ 
+  & & \\ 
+ V4 & 0.296$^{***}$ & 0.300$^{***}$ \\ 
+  & (0.003) & (0.000) \\ 
+  & & \\ 
+ V5 &  & 0.100$^{***}$ \\ 
+  &  & (0.000) \\ 
+  & & \\ 
+ Constant & $-$0.200$^{***}$ & $-$0.200$^{***}$ \\ 
+  & (0.002) & (0.000) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 989 & 989 \\ 
+R$^{2}$ & 0.971 & 1.000 \\ 
+Adjusted R$^{2}$ & 0.971 & 1.000 \\ 
+Residual Std. Error & 0.058 (df = 986) & 0.000 (df = 985) \\ 
+F Statistic & 16,637.120$^{***}$ (df = 2; 986) & 72,062,031,301,068,702,944,080,648,044,440.000$^{***}$ (df = 3; 985) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+> 
+> proc.time()
+   user  system elapsed 
+   0.48    0.07    0.73 

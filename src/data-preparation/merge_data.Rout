@@ -1,0 +1,32 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # Load datasets into R 
+> df1 <- read.csv("./data/dataset1/dataset1.csv")
+> df2 <- read.csv("./data/dataset2/dataset2.csv")
+> 
+> # Merge on id
+> df_merged <- merge(df1,df2,by="id")
+> 
+> # Save merged data
+> save(df_merged,file="./gen/data-preparation/temp/data_merged.RData")
+> 
+> proc.time()
+   user  system elapsed 
+   0.17    0.07    0.25 
