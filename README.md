@@ -1,6 +1,6 @@
-# Test of reproducible research workflow 
+# Exampel of reproducible research workflow 
 
-This is a basic test/example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
+This is a basic example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
 
 The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
 1. Load and prepare data
@@ -21,4 +21,4 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 - Tested under Windows 10, using `cmd.exe` terminal 
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
 - On unix system, probably need to adjust `del` command to `rm`
-- Many improvements remain (e.g. store .Rout files in audit folders, modify table etc.) 
+- Many possible improvements remain, comments are welcome
