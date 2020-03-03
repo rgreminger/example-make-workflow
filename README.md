@@ -2,7 +2,7 @@
 
 This is a basic test/example repository using Gnu make for a reproducible research workflow, as described in detail here: [tilburgsciencehub.com](http://tilburgsciencehub.com/). 
 
-The main aim of this to have a basic structure, which can be easily adjusted to use in an actual projects.  In this example project, the following is done: 
+The main aim of this to have a basic structure, which can be easily adjusted to use in an actual project.  In this example project, the following is done: 
 1. Load and prepare data
 2. Run some analysis
 3. Present results in a final pdf generated using LaTeX
