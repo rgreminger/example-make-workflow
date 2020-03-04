@@ -2,10 +2,13 @@
 # - If run on unix system, use rm instead of del command in clean  
 # - Careful with spaces! If use \ to split to multiple lines, cannot have a space after \ 
 
-all: data_cleaned results paper clean 
+# OVERALL BUILD RULES
+all: data_cleaned results paper
 paper: gen/paper/output/paper.pdf
 data_cleaned: gen/data-preparation/output/data_cleaned.RData
 results: gen/analysis/output/model_results.RData
+
+# INDIVIDUAL RECIPES
 
 # Generate paper/text
 gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
@@ -34,7 +37,10 @@ gen/data-preparation/temp/data_merged.RData: data/dataset1/dataset1.csv \
 						src/data-preparation/merge_data.R
 	R CMD BATCH src/data-preparation/merge_data.R
 	
-clean: 
+clean1: 
 	del /S *.log *.aux 
+clean2:	
 	del .RData
+
+clean: clean1 clean2
 
