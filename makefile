@@ -7,6 +7,7 @@ all: data_cleaned results paper
 paper: gen/paper/output/paper.pdf
 data_cleaned: gen/data-preparation/output/data_cleaned.RData
 results: gen/analysis/output/model_results.RData
+.PHONY: clean
 
 # INDIVIDUAL RECIPES
 
@@ -36,8 +37,10 @@ gen/data-preparation/temp/data_merged.RData: data/dataset1/dataset1.csv \
 						data/dataset2/dataset2.csv \
 						src/data-preparation/merge_data.R
 	R CMD BATCH src/data-preparation/merge_data.R
-	
-clean: 
-	del /S *.log *.aux
-	del .RData
 
+# Clean-up: Deletes temporary files
+# Note: Using R to delete files keeps platform-independence. 
+# 	    --vanilla option prevents from storing .RData output
+clean: 
+	R CMD BATCH --vanilla src/clean-up.R
+	
