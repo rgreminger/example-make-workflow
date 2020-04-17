@@ -14,7 +14,10 @@ results: gen/analysis/output/model_results.RData
 # Generate paper/text
 gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 				src/paper/paper.tex
-	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex'
+	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex' 
+	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex' 
+	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex' 
+# Note: runs pdflatex multiple times to have correct cross-references
 
 # Generate tables 
 gen/paper/output/table1.tex: gen/analysis/output/model_results.RData \
