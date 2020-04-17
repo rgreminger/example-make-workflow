@@ -13,11 +13,12 @@ The main aim of this to have a basic structure, which can be easily adjusted to 
 	install.packages("stargazer")
 - Gnu make 
 - TeX distribution (I use TeX Live 2019) 
-- For the `makefile` to work, R, Gnu make and the TeX distribution need to be made available in the system path 
+- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
 - Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
 
 
 ## Notes
+- `make clean` removes all unncessary temporary files. 
 - Tested under Linux Mint (should work in any linux distro, as well as on Windows and Mac) 
 - IMPORTANT: In `makefile`, when using `\` to split code into multiple lines, no space should follow `\`. Otherwise Gnu make aborts with error 193. 
 - Many possible improvements remain. Comments and contributions are welcome!
