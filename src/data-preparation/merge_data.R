@@ -1,6 +1,6 @@
 # Load datasets into R 
-df1 <- read.csv("./data/dataset1/dataset1.csv")
-df2 <- read.csv("./data/dataset2/dataset2.csv")
+df1 <- read.csv("./gen/data-preparation/input/dataset1.csv")
+df2 <- read.csv("./gen/data-preparation/input/dataset2.csv")
 
 # Merge on id
 df_merged <- merge(df1,df2,by="id")

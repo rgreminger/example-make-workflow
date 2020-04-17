@@ -5,4 +5,6 @@ load("./gen/analysis/output/model_results.RData")
 require(stargazer) 
 
 # Export to latex table (omits f-stat since messes up table)
-stargazer(m1,m2,out="./gen/paper/output/table1.tex",omit.stat=c("f")) 
+stargazer(m1,m2,out="./gen/paper/output/table1.tex",
+            title = "Example results", label = "tab:example",
+            omit.stat=c("f")) 
