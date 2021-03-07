@@ -22,30 +22,30 @@ gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 # Generate tables 
 gen/paper/output/table1.tex: gen/analysis/output/model_results.RData \
 				src/paper/tables.R
-	RScript src/paper/tables.R
+	Rscript src/paper/tables.R
 
 # Run analysis  
 gen/analysis/output/model_results.RData: gen/data-preparation/output/data_cleaned.RData \
 						src/analysis/analyze.R
-	RScript src/analysis/update_input.R
-	RScript src/analysis/analyze.R
+	Rscript src/analysis/update_input.R
+	Rscript src/analysis/analyze.R
 
 # Clean data
 gen/data-preparation/output/data_cleaned.RData: data/dataset1/dataset1.csv \
 						data/dataset2/dataset2.csv \
 						src/data-preparation/merge_data.R \
 						src/data-preparation/clean_data.R 
-	RScript src/data-preparation/update_input.R
-	RScript src/data-preparation/merge_data.R
-	RScript src/data-preparation/clean_data.R 
+	Rscript src/data-preparation/update_input.R
+	Rscript src/data-preparation/merge_data.R
+	Rscript src/data-preparation/clean_data.R 
 
 # Download data
 data/dataset1/dataset1.csv data/dataset2/dataset2.csv: src/data-preparation/download_data.R 
-	RScript src/data-preparation/download_data.R 
+	Rscript src/data-preparation/download_data.R 
 
 # Clean-up: Deletes temporary files
 # Note: Using R to delete files keeps platform-independence. 
 # 	    --vanilla option prevents from storing .RData output
 clean: 
-	RScript --vanilla src/clean-up.R
+	Rscript --vanilla src/clean-up.R
 	
